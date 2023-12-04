@@ -5,9 +5,9 @@ import requests # to acquire the data from the url link
 from bs4 import BeautifulSoup # to web scrape the data by parsing the data
 import csv # write the data to a csv file
 
-years = [str(i) for i in range(2022, 2023)] # years 2008-2022
-months = [str(i) for i in range(1,2)] # 1-12 months, that is, January to December
-days = [str(i) for i in range(1,3)] # 1-28 days
+years = [str(i) for i in range(2008, 2023)] # years 2008-2022
+months = [str(i) for i in range(1,13)] # 1-12 months, that is, January to December
+days = [str(i) for i in range(1,29)] # 1-28 days
 
 dates = [] # dates list stores each date 
 
