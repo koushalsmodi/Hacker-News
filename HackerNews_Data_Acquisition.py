@@ -1,12 +1,9 @@
 # Program collects URL, headline, and vote count data from the official Hacker News website, 
 # spanning from 2008 to 2022, with a monthly breakdown and coverage for each of the 28 days per month.
 
-
 import requests # to acquire the data from the url link 
 from bs4 import BeautifulSoup # to web scrape the data by parsing the data
 import csv # write the data to a csv file
-
-
 
 years = [str(i) for i in range(2022, 2023)] # years 2008-2022
 months = [str(i) for i in range(1,2)] # 1-12 months, that is, January to December
@@ -51,19 +48,13 @@ for date in dates:
             # sample:  <span class="score" id="score_38257794">74 points</span>
       
         print(url)
-
-
-
-        
+ 
 num_posts= len(headlines) # number of posts is equal to the number of headlines
 posts = [] # posts list
 for i in range(num_posts):
     dct = {'URL':urls[i], 'Headline':headlines[i], 'Votes':vote_counts[i]} # dictionary to store
     # keys: URL, Headlines, Votes and values: respective entries inside their list
-    posts.append(dct) # a list with a dictionary
-
-                                                                       
-
+    posts.append(dct) # a list with a dictionary                                                             
 
 filename = '/Users/koushalsmodi/Desktop/web_scraping/trial.csv' # file to store data
 
@@ -73,33 +64,3 @@ with open(filename, 'w', newline='') as f:
 
     for post in posts:
         w.writerow(post) # write the data across each row
-                       
-        
-        
-
-
-        
-        
-        
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-        
-            
-            
-            
-            
-
